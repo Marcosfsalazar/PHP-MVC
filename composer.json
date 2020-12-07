@@ -1,0 +1,19 @@
+{
+	"name": "miniframework/mvc",
+	"description": "miniframework to quick start projects",
+	"require": {
+		"php": ">= 7.0"
+	},
+	"authors": [
+		{
+			"name": "Marcos Salazar",
+			"email": "Marcos1010521@gmail.com"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"App\\": "App/",
+			"MF\\": "vendor/MF/"
+		}
+	}
+}
