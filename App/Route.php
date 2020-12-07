@@ -16,6 +16,7 @@ class Route{
 
     public function setRoutes(array $routes){
         $this->routes = $routes;
+        $this->run($this->getUrl());
     }
 
     public function initRoutes(){
@@ -35,7 +36,15 @@ class Route{
     }
 
     public function run($url){
+        foreach($this->getRoutes() as $key => $route){
+            if($url == $route['route']){
+                $class = "App\\Controllers\\".ucfirst($route['controller']);
 
+                $controller = new $class;
+                $action = $route['action'];
+                $controller->$action();
+            }
+        }
     }
 
     public function getUrl(){
