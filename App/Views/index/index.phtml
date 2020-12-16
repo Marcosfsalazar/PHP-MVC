@@ -1,5 +1,13 @@
+
+<html>
+    <hr>
+    <br>
+    <h1>Listagem</h1>
+    <hr>
+</html>
+
 <?php
-
-echo "chegamos ao IndexController action index";
-
+    foreach($this->view->dados as $indice => $valor){
+        echo $indice + 1 .': '.$valor.' ';
+    }
 ?>
