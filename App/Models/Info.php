@@ -3,15 +3,15 @@
 namespace app\Models;
 use \PDO;
 
-class Produto{
+class Info{
     protected $db;
 
     public function __construct(PDO $db){
         $this->db = $db;
     }
 
-    public function getProdutos(){
-        $query = "select id,descricao,preco from tb_produtos";
+    public function getInfo(){
+        $query = "select titulo, descricao from tb_info";
         return $this->db->query($query)->fetchAll();
     }
 }

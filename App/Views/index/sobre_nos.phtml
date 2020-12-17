@@ -1,5 +1,19 @@
+<html>
+
+    <style>
+        .container{
+            margin-left:15px;
+        }
+    </style>
+
+    <hr>
+    <br>
+    <h1>Listagem</h1>
+    <hr>
+</html>
+
 <?php
-
-echo "chegamos ao IndexController action sobreNos";
-
+    foreach($this->view->dados as $indice => $infos){
+        echo "<div class='container'><h5>".$infos['titulo']."</h5>".$infos['descricao']."</div><br><br>";
+    }
 ?>

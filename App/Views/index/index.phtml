@@ -1,5 +1,10 @@
 
 <html>
+    <style>
+        .container{
+            margin-left:15px;
+        }
+    </style>
     <hr>
     <br>
     <h1>Listagem</h1>
@@ -7,7 +12,7 @@
 </html>
 
 <?php
-    foreach($this->view->dados as $indice => $valor){
-        echo $indice + 1 .': '.$valor.' ';
+    foreach($this->view->dados as $indice => $produto){
+        echo "<div class='container'>".$produto['id']."<br>".$produto['descricao']."<br>".$produto[preco]."</div><br>";
     }
 ?>

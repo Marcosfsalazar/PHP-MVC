@@ -5,6 +5,7 @@ namespace App\Controllers;
 use MF\Controller\Action;
 use App\Connection;
 use App\Models\Produto;
+use App\Models\Info;
 
 class IndexController extends Action{
 
@@ -22,6 +23,15 @@ class IndexController extends Action{
     }
 
     public function sobreNos(){
+
+        $conn = Connection::getDb();
+
+        $info = new Info($conn);
+        
+        $infos = $info->getInfo();
+
+        $this->view->dados = $infos;
+
         $this->render("sobre_nos","baseLayout");
     }
 }
